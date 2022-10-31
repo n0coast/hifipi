@@ -1,0 +1,15 @@
+sudo apt-get update
+sudo apt-get install git vim-nox python3-venv 
+sudo apt-get install python3-rpi.gpio python3-spidev python3-pip python3-pil python3-numpy
+sudo apt install libglib2.0-dev
+
+# 
+# You'll need to add or update the following lines to /boot/config.txt to get audio up and running:
+# 
+dtparam=spi=on
+dtoverlay=hifiberry-dac
+gpio=25=op,dh
+
+# You can also disable onboard audio if you're not going to use it,
+# this sometimes helps applications find the right audio device without extra prompting:
+dtparam=audio=off
